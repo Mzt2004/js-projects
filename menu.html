@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+
+<!-- Css -->
+<style>
+    *{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    .photo{
+        height: 300px;
+        border: 2px solid black;
+      
+        
+    }
+    .iteminfo{
+        color: rgb(253, 181, 0);
+    }
+    .underline{
+       background-color: goldenrod;
+       height: 5px;
+       margin: 5px;
+    }
+    .header{
+        letter-spacing: 2px;
+    }
+    .title,.description{
+        color: black;
+    }
+    .description{
+        line-height: 30px;
+        padding: 10px;
+        letter-spacing: 1px;
+        font-size: 18px;
+    }
+    .btn{
+        border: 1px solid goldenrod;
+        border-radius: 10px;
+        height: 60px;
+        color: goldenrod;
+    }
+    .searchbar{
+        height: 40px;
+        margin-left: 20px;
+        margin-bottom: 30px;
+    }
+    .searchbtn,.input{
+        height: 100%;
+    }
+    .input{
+       border: 1px solid goldenrod;
+       border-radius: 10px;
+    }
+   .searchbtn{
+    border: none;
+    background-color: white;
+    background-color: goldenrod;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 20px;
+   }
+    
+</style>
+</head>
+<body>
+    <!-- Heading -->
+    <h1 class="text-center text-dark mt-3 header">Our Trainers</h1>
+    <div class="row">
+        <div class="underline col-md-1 col-1 col-sm-1 mx-auto">
+         
+        </div>
+      </div>
+
+<!-- Search Bar -->
+      <div class="row searchbar">
+        <div class="col-md-4 ">
+           
+            <input type="text" value="" class="input">
+            <button class="searchbtn "><i class="bi bi-search"></i></button>
+        </div>
+      </div>
+    <!-- filter buttons -->
+    <div class="btnscontainer row px-5">
+        <div class=" col-md-3  text-center col-6 mb-2">
+            <button class="px-5 py-2 btn" data-id="Workout">
+                Workout
+             </button>
+        </div>
+        <div class=" col-md-3 text-center col-6 mb-2">
+            <button class=" px-5 py-2 btn" data-id="Boxing">
+                Boxing
+            </button>
+        </div>
+        <div class=" col-md-3 text-center col-6 mb-2">
+            <button class="px-5 py-2 btn" data-id="Cadio">
+                Cadio
+            </button>
+        </div>
+        <div class=" col-md-3 text-center col-6 mb-2">
+            <button class="px-5 py-2 btn" data-id="All">
+               All
+            </button>
+        </div>
+       
+       
+    </div>
+
+
+
+    <!-- Menu -->
+    <div class="menu row row-cols-1 row-cols-sm-2 row-cols-md-2 mt-5 ms-2 me-2">
+        <!-- Solo Menu Item -->
+        <div class="menu-item col-md-6 px-5">
+            <img src="./images/gym1.jpg" class="photo w-100 ">
+            <div class="iteminfo">
+                <header class="row mt-3">
+                    <h4 class="col-md-9 text-center">Gym Photo 1</h4>
+                    <h4 class="col-md-3 text-center">$100</h4>
+                </header><hr>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad qui corporis odit aut accusamus, voluptatibus tempore fugit, similique neque doloribus quae debitis quibusdam consequatur repellendus. Nihil delectus hic accusantium ducimus.</p>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <div class="menu-item col-md-6 px-5">
+            <img src="./images/gym1.jpg" class="photo w-100">
+            <div class="iteminfo">
+                <header class="row mt-3">
+                    <h4 class="col-md-9 text-center">Gym Photo 1</h4>
+                    <h4 class="col-md-3 text-center">$100</h4>
+                </header><hr>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad qui corporis odit aut accusamus, voluptatibus tempore fugit, similique neque doloribus quae debitis quibusdam consequatur repellendus. Nihil delectus hic accusantium ducimus.</p>
+            </div>
+        </div>
+        <div class="menu-item col  ">
+            <img src="./images/gym1.jpg" class="photo w-100">
+            <div class="iteminfo">
+                <header class="row mt-3">
+                    <h4 class="col-md-9 text-center">Gym Photo 1</h4>
+                    <h4 class="col-md-3 text-center">$100</h4>
+                </header><hr>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad qui corporis odit aut accusamus, voluptatibus tempore fugit, similique neque doloribus quae debitis quibusdam consequatur repellendus. Nihil delectus hic accusantium ducimus.</p>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- javascript -->
+    <script>
+        const menu =[
+        {
+            id:1,
+            image: "./images/gym2.jpg",
+            category:"Workout",
+            title: "Mike",
+            price: "$100",
+            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad qui corporis odit aut accusamus, voluptatibus tempore fugit, similique neque doloribus quae debitis quibusdam consequatur repellendus. Nihil delectus hic accusantium ducimus."
+        },
+        {
+            id:2,
+            image: "./images/gym3.jpg",
+            category:"Boxing",
+            title: "James",
+            price: "$150",
+            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad qui corporis odit aut accusamus, voluptatibus tempore fugit, similique neque doloribus quae debitis quibusdam consequatur repellendus. Nihil delectus hic accusantium ducimus."
+        },
+        {
+            id:3,
+            image: "./images/gym1.jpg",
+            category:"Cadio",
+            title: "Rina",
+            price: "$200",
+            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad qui corporis odit aut accusamus, voluptatibus tempore fugit, similique neque doloribus quae debitis quibusdam consequatur repellendus. Nihil delectus hic accusantium ducimus."
+        },
+        {
+            id:4,
+            image: "./images/gym2.jpg",
+            category:"Workout",
+            title: "Joe",
+            price: "$500",
+            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad qui corporis odit aut accusamus, voluptatibus tempore fugit, similique neque doloribus quae debitis quibusdam consequatur repellendus. Nihil delectus hic accusantium ducimus."
+        },
+        {
+            id:5,
+            image: "./images/gym3.jpg",
+            category:"Workout",
+            title: "Tyson",
+            price: "$100",
+            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad qui corporis odit aut accusamus, voluptatibus tempore fugit, similique neque doloribus quae debitis quibusdam consequatur repellendus. Nihil delectus hic accusantium ducimus."
+        },
+        {
+            id:6,
+            image: "./images/gym1.jpg",
+            category:"Workout",
+            title: "Crazy X",
+            price: "$100",
+            description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad qui corporis odit aut accusamus, voluptatibus tempore fugit, similique neque doloribus quae debitis quibusdam consequatur repellendus. Nihil delectus hic accusantium ducimus."
+        },
+        ]
+       
+    let menusection = document.querySelector(".menu");
+    window.addEventListener('DOMContentLoaded',function(){
+       displayMenuFunction(menu);
+    })
+
+let searchbtn = document.querySelector(".searchbtn");
+let input = document.querySelector(".input");
+
+searchbtn.addEventListener('click',function(){
+    let sc = input.value.toLowerCase();
+    
+    let searchFilter = menu.filter(function(item){
+        // console.log(item.title);
+        if(item.title.toLowerCase().includes(sc) || item.price.includes(sc)){
+            return item;
+            console.log(item.name)
+        }
+        else{
+            return "";
+        }
+})
+menusection.innerHTML="";
+ displayMenuFunction(searchFilter);
+})
+
+
+
+
+
+let filterButtons = document.querySelectorAll(".btn");
+filterButtons.forEach(function(btn){
+    btn.addEventListener('click',function(e){
+        
+        let category = e.currentTarget.dataset.id ;
+        let filteredMenu = menu.filter(function(item){
+            // console.log(item.category);
+            console.log(category)
+            if(category == item.category){
+                return item;
+            }
+        })
+        if(category == "All"){
+            displayMenuFunction(menu);
+        }
+        else{
+            displayMenuFunction(filteredMenu);
+        }
+    })
+})
+    
+
+
+
+
+
+
+
+   let displayMenuFunction=(menuItem)=>{
+    let displayMenu = menuItem.map(function(item){
+            return`
+                <div class="menu-item col-md-6 px-5">
+            <img src= ${item.image} class="photo w-100 ">
+            <div class="iteminfo">
+                <header class="row mt-3">
+                    <h4 class="col-md-9 title">${item.title}</h4>
+                    <h4 class="col-md-3 text-center">${item.price}</h4>
+                </header><hr>
+                <p class="description">${item.description}</p>
+            </div>
+        </div>` 
+        })
+        displayMenu = displayMenu.join("");
+        menusection.innerHTML = displayMenu;
+   }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Project</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- style -->
+    <style>
+        
+        .bestselling{
+            display: flex;
+            background-color: rgb(255, 255, 255);
+            flex-wrap: wrap;
+        }
+        .items{
+            margin: auto;
+            background-color: aliceblue;
+            padding: 30px 15px;
+            padding-top: 0px;
+            border-radius: 20px;
+        }
+        h2{
+            text-align: center;
+            color: rgb(153, 153, 31);
+        }
+        h3{
+            text-align: center;
+            color: goldenrod;
+        }
+        button{
+            border-radius: 10px 20px;
+            background-color: rgb(138, 125, 125);
+            color: white;
+        }
+        i{
+            font-size: 20px;
+            padding: 10px;
+            background-color: black;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin: auto;
+            color: white;
+            text-align: center;
+        }
+        .items img{
+            width: 300px;
+            height: 350px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Featured Items</h1>
+    <div class="container">
+        <div class="bestselling">
+            <i class="bi bi-arrow-left" id="prevBtn"></i>
+            <div class="items">
+                <img src="./photos and vds/wanted2.jpg" alt="bike" id="image1">
+                <h2 id="name1">Bicycle Model 2.0</h2>
+                <h3 id="price1">$1000</h3>
+                <button>
+                    Add to Cart
+                </button>
+                <button>
+                    More Details
+                </button>
+            </div>
+            <div class="items">
+                <img src="./photos and vds/wanted6.jpg" alt="bike" id="image2">
+                <h2 id="name2">Bicycle Model 2.0</h2>
+                <h3 id="price2">$1000</h3>
+                <button>
+                    Add to Cart
+                </button>
+                <button>
+                    More Details
+                </button>
+            </div>
+            <div class="items">
+                <img src="./photos and vds/bicycle1.jpg" alt="bike" id="image3">
+                <h2 id="name3">Bicycle Model 2.0</h2>
+                <h3 id="price3">$1000</h3>
+                <button>
+                    Add to Cart
+                </button>
+                <button>
+                    More Details
+                </button>
+            </div>
+            <i class="bi bi-arrow-right" id="nextBtn"></i>
+        </div>
+
+
+
+        <div class="editorchoice">
+
+        </div> 
+
+        <div class="popular">
+
+        </div>
+    </div>
+
+
+    <!-- js -->
+    <script>
+        let bestseller = [
+            {image:"./photos and vds/bicycle1.jpg",name:"Bike 2", price:"$1800",btn1:"Add to Cart",btn2:"More Details"},
+            {image:"./photos and vds/wanted8.jpg",name:"Bike 2", price:"$1800",btn1:"Add to Cart",btn2:"More Details"},
+            {image:"./photos and vds/elliptical2.jpg",name:"Bike 2", price:"$1400",btn1:"Add to Cart",btn2:"More Details"},
+            {image:"./photos and vds/equipment1.jpg",name:"Bike 2", price:"$1860",btn1:"Add to Cart",btn2:"More Details"},
+            {image:"./photos and vds/equipment2.jpg",name:"Bike 2", price:"$1890",btn1:"Add to Cart",btn2:"More Details"},
+            {image:"./photos and vds/equipment3.jpg",name:"Bike 2", price:"$1830",btn1:"Add to Cart",btn2:"More Details"},
+            {image:"./photos and vds/equipment4.jpg",name:"Bike 2", price:"$1810",btn1:"Add to Cart",btn2:"More Details"},
+            {image:"./photos and vds/equipment5.jpg",name:"Bike 2", price:"$1820",btn1:"Add to Cart",btn2:"More Details"},
+            {image:"./photos and vds/equipment1.jpg",name:"Bike 2", price:"$1840",btn1:"Add to Cart",btn2:"More Details"},
+            {image:"./photos and vds/homeslide1.jpg",name:"Bike 2", price:"$1880",btn1:"Add to Cart",btn2:"More Details"},
+            {image:"./photos and vds/homeslide2.jpg",name:"Bike 2", price:"$1900",btn1:"Add to Cart",btn2:"More Details"},
+            {image:"./photos and vds/homeslide3.jpg",name:"Bike 2", price:"$1200",btn1:"Add to Cart",btn2:"More Details"},
+            {image:"./photos and vds/homeslide4.jpg",name:"Bike 2", price:"$1000",btn1:"Add to Cart",btn2:"More Details"},
+            {image:"./photos and vds/homeslide5.jpg",name:"Bike 2", price:"$1800",btn1:"Add to Cart",btn2:"More Details"},
+            {image:"./photos and vds/treadmill pro.jpg",name:"Bike 2", price:"$2800",btn1:"Add to Cart",btn2:"More Details"},
+        ];
+
+        let currentItem = 0;
+
+        let image1 = document.querySelector("#image1");
+        let price1 = document.querySelector("#price1");
+        let name1 = document.querySelector("#name1");
+        let image2 = document.querySelector("#image2");
+        let price2 = document.querySelector("#price2");
+        let name2 = document.querySelector("#name2");
+        let image3 = document.querySelector("#image3");
+        let price3 = document.querySelector("#price3");
+        let name3 = document.querySelector("#name3");
+        let previousBtn = document.querySelector("#prevBtn");
+        let nextBtn = document.querySelector("#nextBtn");
+
+
+let display = function(){
+   
+     image1.src = bestseller[currentItem].image;
+    name1.textContent = bestseller[currentItem].name;
+    price1.textContent = bestseller[currentItem].price;
+
+    image2.src = bestseller[currentItem+1].image;
+    name2.textContent = bestseller[currentItem+1].name;
+    price2.textContent = bestseller[currentItem+1].price;
+console.log(currentItem+1);
+    image3.src = bestseller[currentItem+2].image;
+    name3.textContent = bestseller[currentItem+2].name;
+    price3.textContent = bestseller[currentItem+2].price;
+
+//     currentItem++;
+//     console.log(currentItem);
+//     image2.src = item.image;
+//     name2.textContent = item.name;
+//     price2.textContent = item.price;
+//     currentItem++;
+    
+//     image3.src = item.image;
+//     name3.textContent = item.name;
+//     price3.textContent = item.price;
+//     console.log(currentItem);
+// 
+
+}
+        window.addEventListener('DOMContentLoaded', function(){
+            display();
+        })
+        previousBtn.addEventListener('click', function(){
+            currentItem-=3;
+            if(currentItem<0){
+                currentItem = bestseller.length-3;
+            }
+            display();
+        })
+        nextBtn.addEventListener('click', function(){
+            currentItem+=3;
+            if(currentItem >bestseller.length){
+                currentItem = 0;
+            }
+            display();
+        })
+    </script>
+</body>
+</html>

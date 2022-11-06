@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <style>
+        body{
+            background-color: rgb(126, 109, 109);
+        }
+        h1{
+            text-align: center;
+            font-size: 40px;
+            color: rgb(9, 194, 194);
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        .underline{
+            width: 10%;
+            
+            background-color: aquamarine;
+            margin-left: 45%;
+            margin-top: 8px;
+            padding: 3px;
+        }
+        .container{
+            background-color: white;
+            border: 1px solid gray;
+            box-shadow: 2px 2px 2px 2px rgb(66, 63, 63);
+            width: 50%;
+            margin-left: 25%;
+            margin-top: 30px;
+            position: relative;
+            padding-bottom: 30px;
+            border: 2px solid black;
+            
+        }
+        .image,.randomBtn{
+            display: flex;
+        }
+        #image{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: auto;
+            margin-top: 30px;
+        }
+        h2{
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        h3{
+            text-align: center;
+            color: aqua;
+        }
+        p{
+            text-align: center;
+            letter-spacing: 1px;
+            margin: 10px;
+        }
+        .btns{
+            display: flex;
+            width: 50%;
+            margin-left: 43%;
+            
+        }
+        /* .btns span{
+            width: 40%;
+            border: none;
+            margin-left: 30%;
+        } */
+        span i{
+            text-align: center;
+            font-size: 30px;
+            color: aqua;
+            padding: 10px;
+        }
+        #randomBtn{
+            text-align: center;
+            margin: auto;
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 2px solid aqua;
+            color: rgb(63, 189, 189);
+            
+        }
+        .btn{
+        border: 1px solid goldenrod;
+        border-radius: 10px;
+        height: 60px;
+        color: goldenrod;
+    }
+    </style>
+</head>
+<body>
+    <h1>Our Reviews</h1>
+    <div class="underline"></div>
+    <!-- filter buttons -->
+    <div class="btnscontainer row px-5">
+        <div class=" col-md-3  text-center col-6 my-4 mb-2">
+            <button class="px-5 py-2 btn" data-id="1-star">
+                1-star
+             </button>
+        </div>
+        <div class=" col-md-3 text-center col-6 my-4 mb-2">
+            <button class=" px-5 py-2 btn" data-id="2-star">
+              2-star
+            </button>
+        </div>
+        <div class=" col-md-3 text-center col-6 my-4 mb-2">
+            <button class="px-5 py-2 btn" data-id="4-star">
+                4-star
+            </button>
+        </div>
+        <div class=" col-md-3 text-center col-6 my-4 mb-2">
+            <button class="px-5 py-2 btn" data-id="5-star">
+               5-star
+            </button>
+        </div>
+        
+    </div>
+    <div class="row btnscontainer ">
+        <div class="col-md-6 text-center">
+            <button class="px-5 py-2 btn my-3" data-id="3-star">
+                3 star
+            </button>
+        </div>
+        <div class="col-md-6 text-center">
+            <button class="px-5 py-2 btn my-3" data-id="All">
+                All
+            </button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="image">
+            <img src="./images/gym1.jpg" id="image">
+        </div>
+        
+        <h2 id="name">Michael Yeager</h2>
+        <h3 id="job">Web Developer</h3>
+        <p id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nesciunt veritatis laborum aspernatur unde quibusdam ut obcaecati ea esse reiciendis distinctio non facere incidunt sunt sequi reprehenderit tempore, voluptates dolor!</p>
+        <div class="btns">
+            <span id="prevBtn"><i class="bi bi-arrow-left"></i></span>
+                
+            <span id="nextBtn"><i class="bi bi-arrow-right"></i>
+            </span>
+            
+                
+        </div>
+        <!-- random button -->
+        <div class="randomBtn">
+            <button id="randomBtn">
+                Random shit
+            </button>
+        </div>
+        
+    </div>
+
+
+    <!-- Js -->
+    <script>
+        let reviews = [
+            {review:"1-star",name:"Mike",image:"./images/gym2.jpg",job:"Body Builder",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nesciunt veritatis laborum aspernatur unde quibusdam ut obcaecati ea esse reiciendis distinctio non facere incidunt sunt sequi reprehenderit tempore, voluptates dolor!"},
+            {review:"2-star",name:"Allen",image:"./images/gym3.jpg",job:"Designer",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nesciunt veritatis laborum aspernatur unde quibusdam ut obcaecati ea esse reiciendis distinctio non facere incidunt sunt sequi reprehenderit tempore, voluptates dolor!"},
+            {review:"3-star",name:"John",image:"./images/gym hero.jpg",job:"Teacher",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nesciunt veritatis laborum aspernatur unde quibusdam ut obcaecati ea esse reiciendis distinctio non facere incidunt sunt sequi reprehenderit tempore, voluptates dolor!"},
+            {review:"4-star",name:"Moere",image:"./images/gym1.jpg",job:"Student",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nesciunt veritatis laborum aspernatur unde quibusdam ut obcaecati ea esse reiciendis distinctio non facere incidunt sunt sequi reprehenderit tempore, voluptates dolor!"},
+            {review:"1-star",name:"Zlatan",image:"./images/gym1.jpg",job:"Student",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nesciunt veritatis laborum aspernatur unde quibusdam ut obcaecati ea esse reiciendis distinctio non facere incidunt sunt sequi reprehenderit tempore, voluptates dolor!"},
+            {review:"5-star",name:"James",image:"./images/gym2.jpg",job:"Manager",description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nesciunt veritatis laborum aspernatur unde quibusdam ut obcaecati ea esse reiciendis distinctio non facere incidunt sunt sequi reprehenderit tempore, voluptates dolor!"}
+        ]
+        let currentItem = 0;
+        let person = document.getElementById("name");
+        let job = document.getElementById("job");
+        let description = document.getElementById("description");
+        let image = document.getElementById("image");
+        let previousBtn = document.querySelector("#prevBtn");
+        let nextBtn = document.querySelector("#nextBtn");
+        let randomBtn = document.querySelector("#randomBtn");
+
+        let display = function(anyreview){
+            const item = anyreview[currentItem];
+            
+            person.textContent = item.name;
+            image.src = item.image;
+            job.textContent = item.job;
+            description.textContent = item.description;
+        }
+        window.addEventListener('DOMContentLoaded',function(){
+            display(reviews);
+        })
+
+        let filterButtons = document.querySelectorAll(".btn");
+        filterButtons.forEach(function(button){
+            button.addEventListener('click',function(e){
+                let category = e.currentTarget.dataset.id;
+                let filteredReview = reviews.filter(function(item){
+                    if(category == item.review){
+                        return item;
+                    }
+                })
+
+                if(category == "All"){
+                    currentItem=0;
+                    display(reviews);
+                    actionButtons(reviews);
+                }
+                else{
+                    currentItem=0;
+                    console.log(currentItem);
+                    display(filteredReview);
+                    actionButtons(filteredReview);
+                }
+
+
+
+                // if(category == "All"){
+                //     display(reviews);
+                // }
+                // else{
+                //     display(filteredReview);
+                // }
+            })
+        })
+
+
+
+     let actionButtons = function(arr){
+        previousBtn.addEventListener('click',function(){
+            currentItem--;
+           
+            if(currentItem < 0){
+                currentItem = arr.length-1;
+            }
+            display(arr);
+        })
+        nextBtn.addEventListener('click',function(){
+            currentItem++;
+            
+            if(currentItem > arr.length-1){
+                currentItem = 0;
+            }
+            display(arr);
+        })
+
+        randomBtn.addEventListener('click',function(){
+            currentItem = Math.floor(Math.random() *arr.length)
+            display(arr);
+        })
+     }
+
+
+
+        
+    </script>
+</body>
+</html>

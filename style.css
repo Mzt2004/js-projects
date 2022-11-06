@@ -1,0 +1,25 @@
+.image{
+    height: auto;
+    width: 100%;
+  }
+  p{
+    height: 150px;
+    padding: 25px;
+  }
+  i{
+    margin: 5px;
+  }
+   .round{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+  }
+  .normal{
+    height: 250px;
+  }
+  .caption{
+    margin-bottom: 60%;
+  }
+  .carousel-caption{
+    margin-bottom: 60%;
+  }
